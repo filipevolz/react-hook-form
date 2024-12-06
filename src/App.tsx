@@ -8,15 +8,15 @@ export function App() {
     <BrowserRouter>
       <Routes>
         <Route
-          path="signup"
+          path="/signup"
           element={<CreateUserForm />}
         />
         <Route
-          path="login"
+          path="/login"
           element={<LoginUserForm />}
         />
         <Route
-          path="dashboard"
+          path="/dashboard"
           element={<Dashboard />}
         />
       </Routes>
