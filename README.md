@@ -1,50 +1,33 @@
-# React + TypeScript + Vite
+# React Hook Form Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação utilizando **React**, **React Hook Form**, **Zod** e **ZodResolver** para gerenciar formulários de cadastro e login. Ele permite o cadastro de novos usuários, login e acesso a um dashboard.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Cadastro de Usuário**: Permite que o usuário crie uma conta fornecendo nome, e-mail e senha. O nome é formatado automaticamente para que a primeira letra de cada palavra seja maiúscula.
+  
+- **Validação de Formulário com Zod**: Utiliza a biblioteca Zod para validar e garantir que os dados inseridos nos formulários atendam aos requisitos especificados (por exemplo, e-mail válido, senha com mínimo de 6 caracteres, etc.).
+  
+- **Login de Usuário**: Permite que o usuário faça login com e-mail e senha. A autenticação é feita com base em dados simulados armazenados em uma API de mock. O login só é bem-sucedido se as credenciais corresponderem aos dados da API.
 
-## Expanding the ESLint configuration
+- **Redirecionamento após Login**: Após um login bem-sucedido, o usuário é redirecionado para a página do **Dashboard**, indicando que a autenticação foi bem-sucedida.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Navegação entre Páginas**: O sistema inclui navegação entre três páginas principais:
+  - **Cadastro de usuário** (`/signup`): Página onde o usuário pode se cadastrar.
+  - **Login** (`/react-hook-form`): Página onde o usuário insere suas credenciais para fazer login.
+  - **Dashboard** (`/dashboard`): Página exibida após login bem-sucedido.
 
-- Configure the top-level `parserOptions` property like this:
+Essas funcionalidades garantem um fluxo básico de autenticação e gerenciamento de usuários dentro do sistema.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Páginas
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- `/signup`: Página para cadastro de novo usuário.
+- `/react-hook-form`: Página para login de usuário existente.
+- `/dashboard`: Página exibida após login bem-sucedido.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Exemplo de Uso
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Acesse a página de cadastro (`/signup`).
+2. Preencha os campos de nome, e-mail e senha e clique em "Salvar".
+3. Acesse a página de login (`/react-hook-form`), insira seu e-mail e senha.
+4. Se o login for bem-sucedido, você será redirecionado para o dashboard.
