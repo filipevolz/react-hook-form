@@ -109,7 +109,7 @@ export function CreateUserForm() {
             children="Login"
             type="button"
             className="loginButton"
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/react-hook-form")}
           />
         </div>
       </form>
