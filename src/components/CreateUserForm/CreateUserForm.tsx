@@ -52,7 +52,7 @@ export function CreateUserForm() {
       const result = await response.json();
       console.log("Usuário criado:", result);
       setOutPut(JSON.stringify(result, null, 2));
-      navigate("/login");
+      navigate("/react-hook-form");
     } catch (error) {
       console.error(error);
       alert("Erro ao salvar os dados. Tente novamente.");
