@@ -12,7 +12,7 @@ export function App() {
           element={<CreateUserForm />}
         />
         <Route
-          path="/login"
+          path="/react-hook-form"
           element={<LoginUserForm />}
         />
         <Route
